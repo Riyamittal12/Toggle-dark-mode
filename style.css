@@ -1,0 +1,221 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+  }
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+    scroll-behavior: smooth;
+  }
+  
+  /* Dark Mode */
+  body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+  }
+  body.dark-mode .hero {
+    background: linear-gradient(135deg, #33475b 0%, #5e5b8e 100%);
+  }
+  body.dark-mode .benefits,
+  body.dark-mode .accordion-content,
+  body.dark-mode .benefits-table,
+  body.dark-mode .partners,
+  body.dark-mode .partner-logos,
+  body.dark-mode .hello {
+    background-color: #333;
+    color: var(--text-light);
+  }
+  body.dark-mode table, 
+  body.dark-mode th, 
+  body.dark-mode td {
+    background-color: #444;
+    color: var(--text-light);
+    border-color: #555;
+  }
+  
+  button { 
+    cursor: pointer; 
+  }
+  
+  /* Shiplee Brand Colors */
+  :root {
+    --primary-color: #122d48;
+    --secondary-color: #ffffff;
+    --accent-color: #cdc9ef;
+    --background-light: #f9fafb;
+    --background-dark: #222831;
+    --text-dark: #333;
+    --text-light: #ffffff;
+  }
+  
+  /* Dark Mode Toggle */
+  #darkModeToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  #darkModeToggle:hover {
+    background-color: rgba(117, 11, 144, 0.546);
+  }
+  
+  /* Scroll-to-Top Button */
+  #scrollTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  #scrollTopBtn:hover {
+    background-color: rgba(117, 11, 144, 0.546);
+  }
+  
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: var(--text-light);
+    animation: fadeIn 1s ease-out;
+  }
+  .cta-button {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  .cta-button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+  }
+  
+  /* Benefits Section */
+  .benefits {
+    padding: 40px;
+    background-color: #f0f4f8;
+    color: var(--text-dark);
+    text-align: center;
+  }
+  .benefits h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    animation: fadeInUp 1s;
+  }
+  .accordion-toggle {
+    padding: 10px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color:white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  .accordion-toggle:hover {
+    background-color: var(--accent-color);
+  }
+  .accordion-content {
+    display: none;
+    animation: fadeInUp 0.5s ease-in-out;
+    background-color: var(--background-light);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Benefits Table */
+  .benefits-table {
+    padding: 40px;
+    background-color: var(--background-light);
+    text-align: center;
+  }
+  .benefits-table h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+  }
+  th, td {
+    padding: 15px;
+    border: 1px solid #ccc;
+  }
+  th {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+  }
+  td {
+    background-color: #f8fafc;
+  }
+  
+  /* Reach Section */
+  .reach {
+    padding: 40px;
+    text-align: center;
+    background: linear-gradient(135deg, #e8f5ff 0%, #cfe7ff 100%);
+    color: var(--text-dark);
+    animation: fadeIn 1.2s ease-out;
+  }
+  .reach h2 {
+    color: var(--primary-color);
+  }
+  
+  /* Partner Logos */
+  .partner-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: var(--background-light);
+  }
+  .partner-logos img {
+    width: 100px;
+    transition: transform 0.3s, filter 0.3s;
+    filter: grayscale(50%);
+  }
+  .partner-logos img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero, .benefits, .benefits-table, .reach {
+      padding: 20px;
+    }
+    .cta-button { padding: 8px 16px; }
+    table, th, td { font-size: 14px; }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
